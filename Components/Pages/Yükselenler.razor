@@ -1,0 +1,749 @@
+﻿@page "/yükselenler"
+@attribute [StreamRendering]
+
+<PageTitle>Yükselen Burçlar+</PageTitle>
+
+    <style>
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e7dbcf;
+    color: #000000;
+    line-height: 1.6;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #333, #e7dbcf);
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.login-area a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.login-area a:hover {
+    color: #e7dbcf;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav ul li a:hover {
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Ana İçerik Stili */
+main {
+    padding: 20px 10px 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Giriş Bölümü Stili */
+.introduction {
+    background-color: #ffffff; /* Beyaz arka plan */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #dddddd; /* Hafif gri sınır */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Bölümler İçin Stil */
+section {
+    background-color: #f2f2f2; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.burc {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+
+.burc h3 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.burc p {
+    color: #333;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.burc img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* Footer Stili */
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+    header p {
+        font-size: 1em;
+    }
+
+    .introduction, .burc {
+        padding: 15px;
+    }
+
+    .burc h3 {
+        font-size: 1.5em;
+    }
+
+    .burc p {
+        font-size: 14px;
+    }
+}
+
+    .introduction, .burc {
+        padding: 10px;
+    }
+
+    .burc h3 {
+        font-size: 1.2em;
+    }
+
+    .burc p {
+        font-size: 12px;
+    }
+}
+
+    </style>
+
+<header>
+    <div class="header-container">
+        <div class="title">
+            <h1>BURÇLAND</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Ana Sayfa</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    <main>
+        <section>
+            <div class="burc"> KOÇ
+                <h3>YÜKSELEN KOÇ BURCU</h3>
+                <p>
+                    Yükselen burcu Koç olanlar savaşçı karakterleriyle hayatta her zorluğun üstesinden gelebilirler. 
+                    Baskın karakterleriyle ön plana çıkabilirler. Doğru bildiklerinden şaşmazlar. 
+                    Rekabetçidirler. Onların gözünü hiçbir şey korkutamaz. 
+                    Cesaretleri en büyük avantajlarıdır. 
+                    Çabuk sinirlenebilen yapıları vardır. 
+                    Sonunu düşünmeden hareket ettikleri zamanlar olabilir. 
+                    Gururludurlar. Kadını da erkeği de mert insanlardır. 
+                    Karşı taraftan da dürüst ve net davranışlar beklerler. 
+                </p>
+                <p>
+                    Sorumluluk almaktan çekinmezler. 
+                    Lider özellikleri vardır. 
+                    İnsan yönetmeyi severler. 
+                    Topluluklar içerisinde ikinci planda kalmayı sevmezler. 
+                    Kendilerine güvenleri çoktur. 
+                    Önce kendilerini düşünebilirler. 
+                    Kendilerine koydukları hedefler için her zaman çalışırlar. Günün birinde o hedefe ulaşırlar.
+                </p>
+                <p>
+                    İlişkide de tutkuludurlar. 
+                    Hem sevgisini hem sinirini zirvede yaşayabilirler. 
+                    Bir anda sevdikleri gibi bir anda da soğuyabilirler. 
+                    Sevdikleri kişilere karşı eli açık olurlar. 
+                    Her iki cinste özgürlükleri kısıtlansın istemezler.
+                </p>
+                <p>
+                    Yükselen Koç burçlarında zeka daha ön plana çıkar. 
+                    Bazen ortama göre değişik karakterlere bürünerek kendi çıkarlarına uygun sonuçlar elde edebilirler. 
+                    Kurnazlardır, kolay kolay kandırılamazlar.
+                </p>
+                <p>
+                    Fiziksel özellikleri bakımından atletik bir yapıları vardır. 
+                    Orta ya da uzun boylu olabilirler. Gözler ön plandadır. 
+                    Yüz hatlarına bakıldığında ilk anda gözler dikkat çeker. 
+                    Kararlı bir yüz ifadeleri vardır. 
+                    Omuzları nispeten geniştir. 
+                    Fiziğine, formuna dikkat ederler. 
+                    Spora yatkınlıklarından dolayı kolları ve bacakları kaslı olabilir. 
+                    Yüzlerinde yara izi veya sivilce lekeleri olabilir. 
+                    Uzun ve sivri yüz hatları olabilir. 
+                    Kumral, siyah, kızılın tonlarında saç renklerine sahip olabilirler. 
+                    Gür saçlı olabilirler. 
+                    Dudakları yüzüne göre ince kalabilir.
+                    Alın bölgesi geniştir.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> BOĞA
+                <h3>YÜKSELEN BOĞA BURCU</h3>
+                <p>
+                    Yükselen burcu Boğa olanlar hayatlarında genel olarak sakin bir yapıya sahiptir. 
+                    Ağır kanlıdırlar. Aceleci işleri sevmezler. 
+                    Sabrederek doğruyu bulacaklarını düşünürler. 
+                    Eğer sabırları zorlanmazsa kolay kolay sinirlenmezler. 
+                    Fikirlerinde sabitlerdir. Değişimler için uzun zaman bekleyebilirler. 
+                    Risk almaktan hoşlanmazlar. 
+                    Mevcut düzenlerinden memnunlarsa yeni heyecanlar peşinden koşmazlar.
+                </p>
+                <p>
+                    Maddiyata önem verirler. Hem tutumlu olurlar hem de daha fazla nasıl para kazanacaklarını çok iyi bilirler. 
+                    Bir yükselen Boğa’yı para konularında kandırmak zordur. 
+                    Yapacağı yatırımlar da akıllıca olur. 
+                    Eğer ileride maddi olarak güçlü olacağından eminse o gün gelene kadar sabırla çalışır. 
+                    Yaşadıkları hayatın zevkine düşkündürler. 
+                    Güzel yemekler, pahalı mücevherler ilgilerini çekebilir. 
+                    İştahları açık olduğundan dolayı kolayca kilo alabilirler. 
+                    Fakat sabırlı ve inatçı bir karakter olduklarından ötürü azimle diyet yaparak kilo verebilirler.
+                </p>
+                <p>
+                    İlişkilerinde güven duygusu önemlidir. 
+                    Güvenmedikleri kimseyle işleri olmaz. 
+                    Aşık olduğu zaman romantik birine dönüşürler. 
+                    Kıskanç tavırları olabilir. 
+                    Ne kadar sevseler de inandıkları bir şey uğruna sonuna kadar inat ederler. 
+                    Bazen karşı taraf pes edebilir.
+                </p>
+                <p>
+                    Fiziksel olarak boyun ve enseleri dikkat çeker. 
+                    Kalın yapıdaki boyunları, geniş omuzlar ile devam edebilir. 
+                    Kısa boylu olmaya yatkındırlar. 
+                    Vücutları enine genişlemeye meyilli olabilir. 
+                    Saçlar dalgalı, kıvırcık ve kalın telli olabilir. 
+                    Kumral veya siyah saçlara sahip olabilirler. 
+                    Gözleri renkli olabilir. 
+                    Yüzlerinde elmacık kemikleri ve gamzeleri dikkat çekebilir. 
+                    Dudaklar da kalın olabilir. 
+                    Yumuşak ve sakinleştirici bir ses tonları vardır. 
+                    Burun, yüzün geneline göre iri olabilir. 
+                    Çeneleri küçük ve yuvarlak olur.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> İKİZLER
+                <h3>YÜKSELEN İKİZLER BURCU</h3>
+                <p>
+                    Yükselen İkizler burcu olanlar kendi enerjilerine bile ayak uydurmada zorlanabilirler. 
+                    İkizler’in yüksek zekası ve hareketli yapısı yükselen burç olduğunda daha da öne çıkar. 
+                    Dostluklara önem verirler. Sosyalleşmek, yakınlarıyla paylaşımlar yapmak önemlidir. 
+                    İçine kapanmak veya yalnız bir hayat sürmek onlara göre değildir.
+                </p>
+                <P>
+
+                    Aniden ruh halleri değişebilir. 
+                    Mutsuz olduklarını düşündüklerinde bile içlerindeki yüksek enerjiyle bir anda toparlanabilirler. 
+                    Sabah depresif olan kişiliği, akşam eğlenceli, kahkahalar atan bir karaktere dönüşebilir. 
+                    Hiperaktiflerdir. Özellikle çocukluk zamanlarında ailelerini yormuş olabilirler. 
+                    Sakin yapıdaki burçlarla anlaşmakta zorlanabilirler.
+                </P>
+                <P>
+
+                    Konuşmayı çok severler. Her konu onların ilgisini çekebilir. 
+                    Ama aynı hızla o konudan da vazgeçebilirler. 
+                    Zihinleri hep doludur, hep bir şeyler akıllarında yer tutar. 
+                    Bu sebeple unutkan olabilirler. Kararsız kaldıkları durumlar fazladır. 
+                    Edebi eserlerden hoşlanırlar. Yeni bilimsel ve teknolojik buluşlar da onların ilgi alanıdır. 
+                    Teknolojik her aleti almak isterler. Çünkü hayatlarını kolay ve hızlı bir şekilde yaşamak isterler.
+                </P>
+                <P>
+
+                    Zeki olduklarından bazen duygusal hayatta bir düzen tutturamayabilirler. 
+                    Onların önceliği mantıktır. Bu sebeple aşkı çok sorgulamazlar. 
+                    İlişkileri bittiğinde yıkılmazlar. 
+                    Hatta bir ilişkiden bir ilişkiye rahatlıkla geçebilirler. 
+                    Çifte kısmetli burçlardandır.
+                </P>
+                <p>                    
+                    Yükselen İkizler fiziksel olarak, ince ve uzun boylu bir yapıya sahip olabilirler. 
+                    Karakteristik olarak kollar ve bacaklar ön plana çıkar. 
+                    Uzun ve ince uzuvlarıyla bir bütündürler. 
+                    Enerjileri yüksek olduğundan konuşurken ellerini kullanırlar. 
+                    Gözleri hep etrafı süzer.
+                    Ela veya renkli göz rengine sahip olabilirler. 
+                    Gözleri nispeten küçük olabilir. Yüzleri yukarıdan aşağıya doğru daralarak iner. 
+                    Saçlar koyu renge sahip olabilir. 
+                    Burun uzun olabilir. Çok hızlı yürüyüşleriyle göze batarlar.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> YENGEÇ
+                <h3>YÜKSELEN YENGEÇ BURCU</h3>
+                <p>
+                    Yükselen burcu Yengeç olanlar için hayattaki öncelikleri sevdikleridir. 
+                    Onların güvende olmaları her şeyden önemlidir. 
+                    Koruma iç güdüleri oldukça fazladır. 
+                    Herkesin her şeyinin tam olmasını isterler. 
+                    Kendilerine gelince önemsemedikleri şeyleri, başkalarının başına geldiğinde önemserler. 
+                    Aile kurmak çok değerlidir. Evine bağlıdırlar. 
+                    Evde vakit geçirmeyi severler. 
+                    Yemek yedirmeyi, yemek yapmayı severler.
+                </p>
+                <p>
+                    Sahiplenici ve korumacı tavırları duygusal ilişkilerde kıskançlık yapmalarına neden olabilir. 
+                    Evine bağlı bu kişiler, karşı tarafa güvensizlik duymaya başladıklarında çileden çıkarlar. 
+                    Hisleri çok güçlüdür. Bazen bir kuşkunun doğru olduğunu görmeden gerçek olduğunu bilirler. 
+                    Hislerine bu kadar güvenmeleri bazen yersiz kuruntular yapmalarına neden olabilir.
+                </p>
+                <p>
+                    Çocukları olduğunda ise tüm odak noktaları değişir. 
+                    Anne ya da baba fark etmez işlerinden, kendilerinden önce çocukları gelir. 
+                    Çocukları mutsuzsa onlar için de hayat bir şey ifade etmez. 
+                    Sağlıklı olmaya dikkat ederler. 
+                    Bazen ufak şeyleri büyütmeye meyilli olabilirler.
+                </p>
+                <p>
+                    Duygusal olduklarından zaman zaman ruhsal hallerinde inişler çıkışlar olabilir. 
+                    Endişeli bir yapıya sahip olabilirler. Paraya değer verirler. 
+                    Az kazansalar bile köşede bir miktar paraları olur. 
+                    Geleneklerine bağlıdırlar. Aileden getirdikleri kültürlerine sahip çıkarlar.
+                </p>
+                <p>
+                    Yükselen Yengeç burcu fiziksel olarak, kısa veya orta boylu olabilirler. 
+                    Yüz hatları yuvarlaktır. Tenleri açık renk olabilir. Burun sivri olabilir.
+                    Kilo almaya yatkındırlar. 
+                    Karın bölgesinde genişleme olabilir. 
+                    Midelerine dikkat etmeleri gereklidir. 
+                    Ela veya yeşil gözlü olabilirler. Gözleri büyüktür. 
+                    Bazen yere bakarak veya utanarak konuşabilirler. 
+                    Çene hatları dardır. Kadınlarda göğüsler büyük olabilir. 
+                    Kavisli vücut hatlarına sahip olabilirler. 
+                    Omuzları yuvarlaktır. Ayakları nispeten daha küçük olabilir.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> ASLAN
+                <h3>YÜKSELEN ASLAN BURCU</h3>
+                <p>
+                    Yükselen burcu Aslan olanların toplumdaki itibarı ve gururu her şeyden önce gelir. 
+                    Kendini öne atmaktan hoşlanan kişilerdir. 
+                    Her konuda üstün olmaları gerektiğine inanırlar. 
+                    Kendilerini gerektiği zaman övmeyi, yüceltmeyi severler. 
+                    Hırslı yapıları sayesinde kısa sürede diğer insanlar arasından sıyrılabilirler.
+                </p>
+                <p>
+                    Sevgiye önem verirler. Tutkulu bir aşık olabilirler. 
+                    Her yerde oldukları gibi ilişkilerde de cesurdurlar. 
+                    Hoşuna gitmeyen şeyler varsa dobra dobra söylerler. 
+                    Fakat sinirlendiklerinde öfkelerine hakim olmakta zorlanabilirler. 
+                    Hatta en son söyleyecekleri lafı en başta söyleyebilirler. 
+                    Öfkelendiklerinde aynen aslan gibi kükrercesine sinirini gösterebilirler.
+                </p>
+                <p>
+                    Aşırı gururu bazen hayattan zevk almalarına engel olur. 
+                    Kalpleri kırıldığında tekrardan güvenmeleri zor olur. 
+                    Lüks bir hayata sahip olmak isterler. 
+                    Etrafındaki insanların da kendileriyle aynı seviyede olmalarını isterler. 
+                    Sabit fikirli olmaları bazen başka kişilerin fikirlerini küçümsemelerine neden olabilir. 
+                    Yöneticilik kabiliyetleri gelişmiştir. 
+                    Emir vermeyi severler. Çalışma hayatlarının belli dönemlerinde yönetici olarak çalışabilirler.
+                </p>
+                <p>
+                    Yükseleni Aslan olanlardan şov dünyasında ve sahne sanatlarında oldukça başarılıdır. 
+                    Birçok ünlü aktör veya artist yükselen Aslan olarak karşımıza çıkabilir. 
+                    Şöhret onlara yakışır. Göz önünde bulunmak onlar için önemli olduğundan şöhrette bu duygularını besler.
+                </p>
+                <p>
+                    Yükselen Aslan burçları fiziksel olarak, orta veya uzun boylu olabilirler. 
+                    Dik durmaya özen gösterirler. Yükselen Aslan denildiğinde akla ilk gelen aslan gibi gür saçlardır. 
+                    Kalın telli olup, dalgalıdır. 
+                    Ten renkleri buğday rengi olabilir. Gözleri renkli veya ela olabilir. 
+                    Kemikleri kalın, omuzları geniştir. 
+                    Kendinden emin ve yavaş yürüyüşüyle dikkat çekerler. 
+                    Kaslı vücutları vardır. Sesleri gür ve etkileyicidir.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> BAŞAK
+                <h3>YÜKSELEN BAŞAK BURCU</h3>
+                <p>
+                    Yükselen Başak burcu her zaman yaptığı işin en ince ayrıntılara dikkat eder. 
+                    Bu sebeple de başarılı kişilerin bu burçtan çıkması tesadüf olmaz. 
+                    Giyimine, saçına, stiline önem gösterir. Her zaman temiz ve bakımlıdır. 
+                    Konuşma yetenekleri sayesinde bulundukları ortamda sevilirler. 
+                    Anlatmayı, bir şeyler paylaşmayı severler. Dost canlısıdırlar.
+                </p>
+                <p>
+                    Yükselen Başak burçlarında Merkür’ün verdiği zeka daha da ön plana çıkar. 
+                    Bilgili kişilerdir. Her konuyu zekaları sayesinde çözebilirler. 
+                    Okumaya, araştırmaya meraklıdırlar. 
+                    Matematiksel işlemlere, hesaplara, analizlere çok yatkındırlar. 
+                    Sıfır hatayla çalışırlar. Çoğu hesabı akıllarından yapabilirler. 
+                    Hesaplara yatkınlıkları günün birinde çok zengin olmalarını sağlayabilir.
+                </p>
+                <p>
+                    Eleştirmeyi severler hatta bazen bunu abartırlar. 
+                    Karşı taraf bir müddet sonra sürekli eleştiri duyduğundan uzaklaşabilir. 
+                    Kendilerine de öz eleştiri yaparlar. 
+                    Bu durum hayattan zevk almamalarına sebep olur. 
+                    Hayatta hep bir eksiklikleri olduğunu düşünürler. 
+                    Bu da onları tatmin etmez.
+                </p>
+                <p>
+                    Bu pratik zekalı yükselen burç, konu duygusal ilişkiler olduğunda daha durgun olabilir. 
+                    Çünkü aradığı şey güvendir. Bu güveni de hissedebilmek için karşı tarafı tartar. 
+                    Davranışlarını test edebilir. 
+                    Güvendikten sonra mutlu bir ilişkisi olur. 
+                    Fakat partneri, gittikçe onun görüşlerine zıt bir şekilde hareket etmeye başlarsa, 
+                    yükselen Başak burcunun eleştirileri tartışmalara sebep olabilir.
+                </p>
+                <p>
+                    Yükselen Başak burcu fiziksel olarak, orta boylu olurlar. 
+                    Gözler çok büyük olmamakla beraber kaşlarının şekli düz olabilir.  
+                    Omuzları düşük olabilir. Yüzleri zarif hatlara sahiptir. Dudakları yüzüne oranla ince kalabilir. 
+                    Saçları koyu renk olabilir. Kıvırcık saçlara sahip olabilirler. 
+                    Bakışlarındaki sorgulayıcı tavır uzaktan bile anlaşılabilir.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> TERAZİ
+                <h3>YÜKSELEN TERAZİ BURCU</h3>
+                <p>
+                    Yükselen Terazi burcu olanlar ilk bakışta zarafetleriyle, güzellikleriyle dikkat çekerler. 
+                    Erkekleri ve kadınları çekicidirler. Ortamda değişik bir elektrik yayarlar. 
+                    Bakımlıdırlar. Modayı takip ederler. Her zaman yeniliklere açıktırlar. 
+                    Sempatik tavırlarıyla tanıştıkları ilk anda kolayca iletişim kurabilirler.
+                </p>
+                <p>
+                    Güzelliklere verdikleri önem her şey için geçerlidir. 
+                    Onlar için doğa, insan, canlı veya cansız her şeyde bir estetik olmalıdır. 
+                    O yüzden sofralarında, giyinişlerinde, evlerinde hatta bahçelerinde bile bir estetik algı vardır. 
+                    Bu sebeple güzel sanatlara yatkınlıkları vardır. 
+                    Hayal güçleriyle, güzellik anlayışları birleştiğinde güzel eserler ortaya çıkacaktır.
+                </p>
+                <p>
+                    Terazi burcunun aşkı temsil eden yöneticisi Venüs, yükselen burç olduğunda biraz daha farklı çalışır. 
+                    Çünkü yükselen Terazi burçları daha mantıklı olarak ilişkilere bakarlar. 
+                    Şıpsevdi olabilirler. Aşık olduklarını sanırlar ama aslında bir hevesmiş diyerek aynı hızla ilişkiden kopabilirler. 
+                    Yükselen Terazi gerçekten aşıksa değişir ve evlenir. 
+                    Hep erkekleri hem kadınları için çapkın denilebilir. 
+                    Özgürlükleri önemli olduğundan bağlanmakta zorlanabilirler.
+                </p>
+                <p>                    
+                    Haksızlıklara gelemezler. 
+                    Bu sakin ve neşeli yükselen Terazi burçları haksızlığa uğradıklarında bambaşka bir karaktere dönüşürler. 
+                    Agresif ve hakkını alana kadar da işin peşini bırakmayan bir yapıda olurlar.
+                </p>
+                <p>
+                    Yükselen Terazi fiziksel olarak, uzun boylu ve ince olurlar. 
+                    Vücutlarında orantısal bir denge vardır. Yüz hatları zariftir. 
+                    Tenleri pürüzsüzdür. Saçları sarı, açık kumral olabilir. 
+                    Genellikle düz bir saç stiline sahip olabilirler. 
+                    Gözler mavinin koyu ve açık tonlarında olabilir. 
+                    Parmakları uzun ve ince olabilir. Hayat tarzına ve yediklerine dikkat etmediklerinde kilo almaya yatkın olabilirler.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> AKREP
+                <h3>YÜKSELEN AKREP BURCU</h3>
+                <p>
+                    Yükselen Akrep burcu olanların duygusal yönleri daha ön planda olur. 
+                    Sürekli bir güven arayışındadırlar. 
+                    Kuşkulu olmaları hayatta çok az insana güvenmelerine neden olur. 
+                    Hep yapılan işlerin arkasından bir art niyet ararlar. 
+                    Bu şüpheci tavrı da güven duymakta işleri zorlaştırır. 
+                    Dürüst insanları severler. Yalana tahammülleri yoktur.
+                </p>
+                <p>
+                    Sevgiyi de nefreti de çok uçlarda yaşarlar. 
+                    Sevdi mi belki bir kere severler, nefret ettiler mi de ömür boyu unutmazlar. 
+                    Belki özlemlerinden kan kusarlar ama asla geri dönüşleri olmaz. 
+                    Yükselen Akrep’te kin tutma ve kıskançlık bir adım daha öne çıkabilir. 
+                    Alacakları intikamlar için sabırla gün sayarlar. Partnerlerine karşı da kıskanç olurlar. 
+                    Bu durum bazen karşı tarafın sıkılmasına neden olabilir.
+                </p>
+                <p> 
+                    Organize ve planlı şekilde yaşamayı severler. 
+                    İşlerinin aksamaları hoşlarına gitmez. 
+                    Bu durum başkalarının sorumsuzluklarından kaynaklanırsa daha da öfkelenirler. 
+                    Sabit fikirli yapılarını değiştirmeleri zordur. Bir şey onlar için ne ifade ediyorsa odur.
+                    Asla düşüncelerinde değişiklik yapmazlar.
+                </p>
+                <p>
+                    Yükselen Akrep olunca hisler de çok önem taşır. 
+                    Rüyaların hepsi bir haber iletme çabasındadır. 
+                    Sezgileri hep doğru çıkar. Zaman zaman çok karamsar bir ruh haline girebilirler. 
+                    Hayatın olumsuz tarafına odaklanmaktan mutsuz olabilirler.
+                </p>
+                <p>
+                    Yükselen Akrep burcu fiziksel olarak, uzun veya orta boylu yapıya sahiptir. 
+                    Kaslı, güçlü bir vücuda sahiptirler. Çekici bakışlarıyla hemen fark edilirler. 
+                    Kaşları da ilgi çeker. Yüz uzun olabilir. 
+                    Saçları gür, dalgalı veya kıvırcık olabilir. 
+                    Omuzlar yuvarlak olabilir. 
+                    Vücudun kalçalara doğru inildikçe düzleştiği görülür. 
+                    Burunları dikkat çeker. Gözleri koyu renk olabilir. 
+                    Sessiz ama gizemli bir duruşları vardır.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> YAY
+                <h3>YÜKSELEN YAY BURCU</h3>
+                <p>
+                    Yükselen Yay burcu olanlar neşeleriyle ışık saçarlar. 
+                    Her zaman pozitif olan bu karakter girdiği ortama pozitif enerji verir. 
+                    Dostluklara önem verir. Konuşmayı severler. 
+                    İnsanların paylaştıkça güçleneceğini düşünürler. 
+                    Bazen çok hızlı hareket etmeleri, diğerlerinin başını döndürebilir.
+                </p>
+                <p>
+                    Dünyaya farklı bir bakış açıları vardır. 
+                    Herkesin düşündükleri gibi düşünmezler. 
+                    Felsefi yönleri ağır basar. 
+                    Hayatı körü körüne yaşamak yerine, yaşadıkları bu evreni anlamaya çalışırlar. 
+                    Her şeyin bir sebep ve sonuç ilişkisinden oluştuğunu savunurlar. 
+                    Bu merakları bazı yükselen Yay burçlarının dine bağlı olmasıyla da ilişkilendirilir. 
+                    Maneviyatları güçlü olur. İyilik yaptıkça iyiliklerin onları bulacağını bilirler.
+                </p>
+                <p>
+                    Enerjileri yüksek ve meraklı oldukları için yeni kültürler tanımayı severler. 
+                    Plansızca bir anda sırt çantalarını alıp seyahate çıkabilirler. 
+                    Bu tatiller onları mutlaka kültürel olarak beslemelidir. 
+                    Havuza girmek veya güneşlenmek için seyahate çıktıkları pek nadir görülür. 
+                    Bazen de ülke dışına taşınma durumları olabilir.
+                </p>
+                <p>
+                    Aşk konusunda özgürlüklerine olan düşkünlükleri evliliği geç verebilir. 
+                    Bazen de hiç evlenmeyebilirler. Bir kişiyi sevmeleri yeterlidir diye düşünürler. 
+                    Evlilik onlar için kısıtlayıcı olarak gözükür. 
+                    Çocukları olursa mutlaka onları bilgili ve kültür düzeyi yüksek şekilde yetiştirirler.
+                </p>
+                <p>
+                    Yükselen Yay burcu fiziksel olarak, boyları uzundur. 
+                    Vücutları ince hatlıdır. Saçları koyu kumral olabilir. 
+                    Dalgalı ve kıvırcık saçlı olabilirler. 
+                    Spora yatkın olduklarından vücutlarında kas kütlesi fazla olabilir. 
+                    Yüzleri uzun ve ince bir yapıda olabilir. Elmacık kemikleri dikkat çekebilir. 
+                    Alın ve çene bölgesi geniş olur. Her zaman güler yüzlü olmalarıyla dikkat çekerler.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> OĞLAK
+                <h3>YÜKSELEN OĞLAK BURCU</h3>
+                <p>
+                    Yükselen burcu Oğlak olanlar her zaman mantıklarının sesine güvenirler. 
+                    Duyguların pek yer almadığı bu karakterde, hayatındaki hedeflere ulaşmak öncelik taşır. 
+                    Detaycı ve analitik düşünebilen yapılarıyla büyük sorumluluk isteyen işler için aranılan kişilerdir. 
+                    Aldıkları sorumlulukları kusursuz yerine getirirler. 
+                    Hatta bir adım daha da iyisini yaparak işi bitirirler. 
+                    İş, kariyer, yöneticilik, liderlik onlar için hayatlarının temel kavramları olabilir.
+                </p>
+                <p>
+                    Zorluklar onları korkutmaz. Her zaman en zoruna hazırlıklıdırlar. 
+                    Bir şeyin iyi tarafı yerine kötü tarafını düşündükleri için kötü senaryolarda hep bir çıkış yolları vardır. 
+                    İlk bakışta soğuk ve mesafeli görünüşleri sebebiyle insanlar iletişim kurmak için çekinebilir. 
+                    Herkesle arkadaş olmak yerine birkaç arkadaşı olsun isterler.
+                </p>
+                <p>
+                    Maddiyata önem veren yükselen Oğlak’ların her zaman köşede paraları vardır. 
+                    Çalışma hırsları bazen işkolik olmalarına neden olabilir. 
+                    Ailelerini ihmal edebilirler. En önemlisi sağlıklarına bilmeden zarar verebilirler. 
+                    Disiplinlerinden ödün vermemek için hayatın güzelliklerinden eksik kalabilirler.
+                </p>
+                <p>
+                    Mantığın temsili bu karakterdeki insanlar genellikle aşkı ikinci plana atarlar. 
+                    Hayattaki öncelikleri statüleri olduğundan, aşkın herhangi bir zamanda bulanabileceğine inanırlar. 
+                    Aşık olduklarında romantik olacakları düşünülmemelidir. 
+                    Çok sevseler de duygularını belli edemezler.
+                </p>
+                <p>
+                    Yükselen Oğlak burcu fiziksel olarak, kısa veya orta boyludur. 
+                    Boyunları uzun ve ince olur. Saçları dalgalı veya kıvırcık olabilir. 
+                    Koyu renklerde saçları vardır. Omuzları kemikli gözükebilir. 
+                    Kambur duruşları vardır. Burun uzun ve düz olarak belirir. 
+                    Yanakları düzdür. El ve ayakları vücutlarına oranla büyük olabilir. 
+                    Diz ve ayaklarda kemik çıkıntıları olabilir. 
+                    Erkeklerde sakallar az çıkabilir.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> KOVA
+                <h3>YÜKSELEN KOVA BURCU</h3>
+                <p>
+                    Yükselen Kova burcu olanlar direkt farklılıklarıyla kendilerini belli ederler. 
+                    Topluma göre marjinal bir çizgileri vardır. 
+                    Bu illa ki dış görünüşleriyle olmak zorunda değildir. 
+                    Yaptıkları meslekler, hayat görüşleri veya yaşam biçimleri genel kabul görmüş kriterlere göre farklıdır. 
+                    Özgür ruh olmaları kolay kolay başkalarının yönetimi altına giremeyeceklerini gösterir.
+                </p>
+                <p>
+                    Her zaman karşı çıkmaya meyillidirler. 
+                    Sabit fikirlerine o kadar çok inanırlar ki, tek doğru fikrin onların düşündükleri olduğunu sanırlar. 
+                    Fakat çoğu zaman savundukları düşünceler er ya da geç doğru çıkar.
+                </p>
+                <p>
+                    Azınlıkların sesi olmayı, yardım kuruluşlarında yer almayı sever. 
+                    Dostluklar onlar için önemlidir. 
+                    Farklı olsalar dahi bu marjinal kişilikleriyle parlarlar. 
+                    Ün kazanmaya, toplum önünde olmaya yatkındırlar. 
+                    Zekalarıyla bir yerlere gelirler. Çok düşünürler. 
+                    Bazen saatlerce hareketsiz durup bir fikir için kafa yorabilirler. 
+                    Zekalarına çok güvenmeleri onları tembelleştirebilir. 
+                    Ama zekaları çalışkanlıklarıyla birleşirse bir anda zirveye ulaşabilirler.
+                </p>
+                <p>
+                    Aşk konusunda ise sevgiye ihtiyaçları olsa da bağlanma konusunda sorun yaşayabilirler. 
+                    Sevgilerini gösterirken cömert olurlar. Ama süslü cümleler kuramayabilirler. 
+                    Sorumluluk ve aile düzeninden dolayı da evlilikten kaçabilirler. 
+                    Hem kültürel seviyeleri hem zeka kapasiteleri aynı seviyede olan kişileri tercih ederler.
+                </p>
+                <p>
+                    Yükselen Kova burçları fiziksel olarak, orta boylu ve dolgun bir yapıya sahip olabilirler. 
+                    Güçlü yapıları vardır. Gözleri renkli veya ela olabilir. 
+                    Sarı veya açık kumral saçlara sahip olabilirler. 
+                    Yüz hatları orantılıdır. Burunları küçük olur. Alınları düzdür. 
+                    Ses tonları güzeldir. Dişlerine önem verirler. 
+                    Yükselen Kova kadınlarında gizemli bir güzellik vardır.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="burc"> BALIK
+                <h3>YÜKSELEN BALIK BURCU</h3>
+                <p>
+                    Yükselen burcu Balık olanlar duygularının sesine kulak verirler. 
+                    Topluma, insanlara karşı duyarlıdırlar. 
+                    Hassaslardır. Onlar için hayatın keyifli tarafı önemlidir. 
+                    Kargaşalar, kötülüklerle savaşmak onlara göre değildir. 
+                    Aslında her sorunun güzellikle çözüleceğine inanırlar. 
+                    Bu sebeple yaşadığımız yüzyıl koşulları içerisinde zorlanabilirler.
+                </p>
+                <p>
+                    Bazıları düşlerde yaşayabilirler. 
+                    Kurdukları hayallere inanarak, bazen de olayları kendi biçimlendirmelerine göre anlattıkları olabilir. 
+                    Bu da dalgınlık ve konsantre olmakta zorluklar yaşatabilir. 
+                    Çok stresli işler onlara göre değildir. 
+                    Hatta sert iş hayatı da onları gerer. 
+                    Çünkü çalışma hayatı da onlara zevk vermelidir. 
+                    Yükselen Balık’lar hayatlarının belli zamanlarında işlerini bırakıp bir kasabaya yerleşebilir. 
+                    Hobi veya sanat işlerine yönelebilirler.
+                </p>
+                <p>
+                    Şefkatli yönleri vardır. Acıma duyguları onları bazen zayıf gösterebilir. 
+                    Affetmenin her zaman iyi olmayacağını bilmeleri gereklidir. 
+                    Aşk insanlarıdır. Sevilmek onlar için önemlidir. 
+                    Karşı tarafın sevgisinden şüphe ederlerse karamsarlaşmaya başlarlar. 
+                    Psikolojik olarak birden dibe çökme eğilimde olurlar. 
+                    Hayatları pozitif gitse bile zaman zaman hüzünlü bir psikolojiye sahip olurlar.
+                </p>
+                <p>
+                    Sağlıklarını ihmal etmemeleri gerekir. 
+                    Hem psikolojik hem fiziksel rahatsızlıklara yatkın olurlar. 
+                    İnsanlara yardım etmeyi severler. 
+                    Kalplerinin temizliği yüzlerinden okunabilir.
+                </p>
+                <p>
+                    Yükselen Balık burcu fiziksel olarak, orta veya kısa boylu olurlar. 
+                    Gözleri renkli olabilir. Saçları dalgalı bir yapıya sahip olabilirler. 
+                    Koyu renk saçlar görülebilir. Ayaklar ve eller zarif ve küçüktür. 
+                    Vücutları kilo almaya müsait olabilir. 
+                    Yaş ilerledikçe kilo aşağıdaki bölgelerde toplanmaya başlayabilir. 
+                    Bu yükselen burçtaki kadınların değişik bir elektrikleri olur. 
+                    Hem erkeği hem kadını sempatik ve tatlı tavırlarıyla dikkat çeker.
+                </p>
+            </div>
+        </section>
+        <br>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Yükselen Burçlar Bilgi Merkezi</p>
+    </footer>
+
+@code {
+
+}

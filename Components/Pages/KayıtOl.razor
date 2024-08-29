@@ -1,0 +1,164 @@
+﻿@page "/kayıtol"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Sayfası</title>
+</head>
+<stayle>
+    /* Genel Stil Ayarları */
+    body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff6f61, #de6bff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+
+    /* Konteyner Stili */
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    }
+
+    .registration-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    }
+
+    .registration-form h1 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    }
+
+    /* Form Grup Stilleri */
+    .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+    }
+
+    .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+    border-color: #ff6f61;
+    outline: none;
+    }
+
+    /* Buton Stili ve Animasyon */
+    button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    }
+
+    button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+    }
+
+    button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    }
+
+    button:hover {
+    background-color: #e55e50;
+    transform: scale(1.05);
+    }
+
+    button span {
+    position: relative;
+    z-index: 1;
+    }
+
+</stayle>
+<body>
+    <div class="container">
+        <div class="registration-form">
+            <h1>Kayıt Ol</h1>
+            <form>
+                <div class="form-group">
+                    <label for="firstName">Ad:</label>
+                    <input type="text" id="firstName" placeholder="Adınızı girin" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Soyad:</label>
+                    <input type="text" id="lastName" placeholder="Soyadınızı girin" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-posta:</label>
+                    <input type="email" id="email" placeholder="E-posta adresinizi girin" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Şifre:</label>
+                    <input type="password" id="password" placeholder="Şifrenizi girin" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Cinsiyet:</label>
+                    <select id="gender" required>
+                        <option value="">Seçiniz</option>
+                        <option value="Kadın">Kadın</option>
+                        <option value="Erkek">Erkek</option>
+                        <option value="Diğer">Diğer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">Doğum Tarihi:</label>
+                    <input type="date" id="birthDate" required>
+                </div>
+
+                <button type="submit">Kaydol</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

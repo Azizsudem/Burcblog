@@ -1,0 +1,158 @@
+﻿
+@page "/giris"
+@using System.ComponentModel.DataAnnotations
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burç Girişi</title>
+</head>
+
+<style>
+    /* giris.css */
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #fbc2eb, #a6c0fe);
+        margin: 0;
+        padding: 0;
+        color: #333;
+        text-align: center;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+        color: #f36f6f;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-container {
+        padding: 1rem;
+    }
+
+    .form-section {
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        color: #a6c0fe;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #f36f6f;
+        padding-bottom: 0.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #a6c0fe;
+        border-radius: 8px;
+        background: #ffffff;
+        font-size: 1rem;
+        color: #333;
+        box-sizing: border-box;
+    }
+
+        input.form-control:focus {
+            border-color: #f36f6f;
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(243, 111, 111, 0.5);
+        }
+
+    .form-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    button.btn {
+        width: 48%;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: #000000;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button.btn-login {
+        background-color: #a6c0fe;
+    }
+
+        button.btn-login:hover {
+            background-color: #8a9cfe;
+        }
+
+    button.btn-register {
+        background-color: #f36f6f;
+    }
+
+        button.btn-register:hover {
+            background-color: #f24f4f;
+        }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #a6c0fe;
+        margin: 2rem 0;
+    }
+
+</style>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Burç Girişi</h1>
+        </header>
+
+        <div class="form-container">
+            <div class="form-section">
+                <h2>Kullanıcı Girişi</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="username">Kullanıcı Adı:</label>
+                        <input type="text" id="username" class="form-control" placeholder="Kullanıcı adınızı girin">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Şifre:</label>
+                        <input type="password" id="password" class="form-control" placeholder="Şifrenizi girin">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Giriş Yap</button><br>
+                    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+                </form>
+            </div>
+            <hr />
+        </div>
+    </div>
+</body>
+</html>

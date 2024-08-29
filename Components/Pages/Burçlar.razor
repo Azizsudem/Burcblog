@@ -1,0 +1,1422 @@
+﻿@page "/burçlar"
+@attribute [StreamRendering]
+
+<PageTitle>Burçlar</PageTitle>
+
+<style>
+    /* Genel Sayfa Stili */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e7dbcf;
+    color: #000000;
+    line-height: 1.6;
+    transition: all 0.3s ease-in-out;
+}
+header {
+    background: linear-gradient(135deg, #333, #e7dbcf);
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.login-area a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.login-area a:hover {
+    color: #e7dbcf;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav ul li a:hover {
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+} 
+
+main {
+    padding: 20px 10px 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+/* Bölümler İçin Stil */
+/*KOÇ*/
+.sectionkoc {
+    background-color: #ff0000; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burckoc {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Koç h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #ff0000;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Koç p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #ff0000; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.Koç p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Koç p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+/*BOĞA*/
+.sectionboğa {
+    background-color: #90ee90; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burcboğa {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Boğa h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #90ee90;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Boğa p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #90ee90; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.Boğa p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Boğa p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+/*İKİZLER*/
+.sectionikizler {
+    background-color: #ffa500; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burcikizler {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.İkizler h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #ffa500;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.İkizler p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #ffa500; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.İkizler p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.İkizler p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+/*YENGEÇ*/
+.sectionyengeç {
+    background-color: #ee82ee; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burcyengeç {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Yengeç h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #ee82ee;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Yengeç p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #ee82ee; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.Yengeç p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Yengeç p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+/*ASLAN*/
+.sectionaslan {
+    background-color: #ffff00; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burcaslan {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Aslan h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #ffff00;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Aslan p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #ffff00; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.Aslan p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Aslan p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/*BAŞAK*/
+.sectionbaşak {
+    background-color: #0000ff; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burcbaşak {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Başak h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #0000ff;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Başak p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #0000ff; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.Başak p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Başak p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+/*TERAZİ*/
+.sectionterazi {
+    background-color: #006666; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burcterazi {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Terazi h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #006666;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Terazi p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #006666; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.Terazi p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Terazi p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+/*Akrep*/
+.sectionakrep {
+    background-color: #ffff00; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burcakrep {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Akrep h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #ffff00;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Aslan p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #ffff00; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Gölge ekler */
+}
+
+.Akrep p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Akrep p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+/*YAY*/
+.sectionyay {
+    background-color: #800080; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burcyay {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Yay h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #800080;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Yay p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #800080; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.Yay p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Yay p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+/*OĞLAK*/
+.sectionoğlak {
+    background-color: #965526; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burcoğlak {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Oğlak h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #965526;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Oğlak p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #965526; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.Oğlak p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Oğlak p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+/*KOVA*/
+.sectionkova {
+    background-color: #0000cd; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burckova {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Kova h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #0000cd;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Kova p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #0000cd; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.Kova p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Kova p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+/*BALIK*/
+.sectionbalık {
+    background-color: #777777; /* Açık gri arka plan */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.burcbalık {
+    border: 2px solid #333; /* Koyu çerçeve */
+    padding: 10px;
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 8px;
+}
+.Balık h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #777777;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #dcdcdc; /* Alt çizgi */
+    padding-bottom: 5px;
+}
+.Balık p {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    color: #777777; /* Ana metin rengi */
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+} 
+.Balık p2 {
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Balık p3{
+    display: block;
+    color: #000000; /* Açık gri metin rengi */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Footer Stili */
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Responsive Tasarım */
+@@ media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .introduction, .burc {
+        padding: 15px;
+    }
+
+    .burc h3 {
+        font-size: 1.5em;
+    }
+
+    .burc p {
+        font-size: 14px;
+    }
+}
+
+@@ media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    .introduction, .burc {
+        padding: 10px;
+    }
+
+    .burc h3 {
+        font-size: 1.2em;
+    }
+
+    .burc p {
+        font-size: 12px;
+    }
+}
+</style>
+    <header>
+        <div class="header-container">
+            <div class="title">
+                <h1>BURÇLAND</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Ana Sayfa</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+        <main>
+            <section id="sectionkoc" class="sectionkoc">
+                <div class="burckoc">
+                    <div class="Koç">
+                    <h3>KOÇ BURCU</h3>
+                    <p>20.03 / 19.04<br>
+                        Koç burçları, zeki, kendine güvenen ve hırslı olmalarıyla bilinirler. 
+                        Yaptıkları her işte iddialıdırlar ve düşüncelerini ifade ederken çevrelerindeki insanlar üzerinde etki bırakırlar. 
+                        Bu nedenle ikna kabiliyetleri yüksektir.
+                    </p>
+                    <p2>
+                        12 burcun ilki olan Koç burcu Zodyak'ın başında yer alır. Güneş, her bahar bu burcu 20 Mart-19 Nisan tarihleri arasında ziyaret eder. Yıldız haritanızda Koç burcu gezegen yerleşimine sahip olmasanız da pek çok gezegen yıl boyunca Koç burcundan geçerek onun yakıcı enerjisini harekete geçirdiği için bu burcun enerjisini anlamak önemlidir.
+        
+                        Hareketli ve enerjik oluşları ile tanınırlar. 
+                        Ben egoları çok fazla gelişmiştir. BEN, onların aynası olmuştur adeta. 
+                        Bu burçta doğanlar çok pratiktirler. Olaylar karşısında coşkularını gizleyemezler. 
+                        Yaşam yolunda canlılıklarını ve atılganlıklarını yitirmeden heyecanla ilerlerler. 
+                        Merak ettikleri konularda olabildiğince yaratıcılardır. 
+                        Amaçları doğrultusunda ilerlerken, kendilerini eylemleri ile kanıtlamak isterler. 
+                        Eğer Koç'lar girişimde bulunacakları zaman izleyecekleri rotayı ayrıntıları ile planlarsa, 
+                        enerjik yapılarının da yardımı ile daha da üretken olabilirler. 
+                        Bencilliklerinden kaynaklanan sabırsızlıkları ve söz dinlemez yaratılışları yüzünden zaman zaman güç durumlara düştükleri de olur. 
+                        Böyle anlarda başladıkları işlerini sonuçlandırmadan bırakırlar. 
+                        Konuşmaları abartılıdır, bazen gerçekleri değiştirerek anlatırlar. 
+                        Kavrama yetenekleri fazla olan Koç'lar yaşam sahnesinin başrolünde olmayı tercih ederler. 
+                        Aşırı kıskanç ve bağımsızlıklarına düşkün olurlar.  
+                    </p2>
+                    <p3>
+                        <strong>Elementi:</strong> <span>Ateş</span><br>
+                        <strong>Niteliği:</strong> <span>Öncü</span><br>
+                        <strong>Yönetici Gezegeni:</strong> <span>Mars (savaş ve enerji gezegeni)</span><br>
+                        <strong>Rengi:</strong> <span>Kırmızı</span><br>
+                        <strong>Taşı:</strong> <span>Yakut, elmas, yeşim, garnet</span><br>
+                        <strong>Günü:</strong> <em>Salı</em><br>
+                        <strong>Koç Burcu Özellikleri:</strong> 
+                        <span>Aktif, dinamik, insiyatif sahibi, hızlı, lider, yönetici</span>
+                    </p3>
+                </div>
+                </div>
+            </section>
+
+            <section id="sectionboğa" class="sectionboğa">
+                <div class="burcboğa">
+                    <div class="Boğa">
+                        <h3>Boğa Burcu</h3>
+                        <p>20.04 / 20.05<br>
+                            Boğa Burçları inatçı kişilerdir. 
+                            Sabırlı ve güvenilirdirler. 
+                            İlgi duydukları şeylere tutkuyla bağlanırlar. 
+                            İlgili, korumacı ve tutkulu olmaları, onları ikili ilişkilerinde başarılı kılar.
+                        </p>
+                        <p2>
+                            Zodyak'ın 12 burcundan ikinci olan Boğa burcunun döngüsü her yılın 20 Nisan - 20 Mayıs tarihleri arasında başlar. 
+                            Yıldız haritanızda Boğa burcu gezegen yerleşimine sahip olsanız da olmasanız da yıl boyunca çeşitli gezegenler 
+                            Boğa burcunu ziyaret ederek bu burcun toprak enerjisini uyandırdığı için bu enerjiyi anlamak önemlidir.
+                
+                            Boğa'lar hedefleri doğrultusunda ilerlerken, tüm dikkatlerini toplayabilme yeteneklerinin yanında maddecilikleri ile tanınırlar. 
+                            SAHİP olma onların yaşam gerçekleridir. 
+                            Bireysel ilişkiler konusunda son derece güvenilir olan Boğa'lar, insanlara yardım etmekten hoşlanırlar. 
+                            Yaşamları boyunca güven ararlar ve bu yüzden kendilerini riske atmazlar. 
+                            Amaçladıkları işler konusunda gösterdikleri sabır, bazen diğer kişileri çatlatacak boyutlarda olabilir. 
+                            Bütün bunlara rağmen çevresi tarafından aranılan, sıcakkanlı insanlardır. 
+                            Sürekli somut konularla uğraşmayı severler, doğada bulunan olaylardan örneklemelerle işlerini başarılı bir şekilde yürütürler. 
+                            Bu yüzden ruhsal olarak da doyumlu kişilerdir. 
+                            Olayları organize ederlerken rahatlıklarını gözetirler ve kendilerinin zevklerine uygun olmasına önem verirler. 
+                            Yaşamdaki isteklerini elde ettikleri zaman, hiçbir koşul onları başka yönlere çekemez. 
+                            Parayı rahata ulaşmak için bir araç olarak görürler. 
+                            Mal ve mülk edinme konusunda beceriklidirler. 
+                            Finans ve yatırım konuları ilgilerini çeker.
+                        </p2>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Toprak</span><br>
+                            <strong>Niteliği:</strong> <span>Sabit</span><br>
+                           <strong>Yönetici Gezegeni:</strong> <span>Venüs (güzelliğin ve aşkın gezegeni)</span><br>
+                           <strong>Rengi:</strong> <span></span>Açık Yeşil<br>
+                           <strong>Taşı:</strong> <span>Elmas, zümrüt, safir, turkuaz</span><br>
+                           <strong>Günü:</strong> <em>Cuma</em><br>
+                           <strong>Boğa Burcu Özellikleri:</strong> 
+                           <span>Güvenilir, rahatına, konforuna, yemeğe düşkün, gurme, harekete geçmekte zorlanan</span>
+                        </p3>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="sectionikizler" class="sectionikizler">
+                <div class="burcikizler">
+                    <div class="İkizler">
+                        <h3>İkizler Burcu</h3>
+                        <p>21.05 / 20.06<br>
+                            İkizler Burcu'nun sembolündeki "ikizler", burcun esnek ve uyumlu yapısını yansıtır. 
+                            İkizler Burcu'ndan olanlar kendilerini çevrelerindeki insanların ruhsal durumuna göre adapte ederler. 
+                            Bu nedenle ruh halleri ve kişilikleri bulundukları ortama göre değişkenlik gösterebilir.
+                        </p>
+                        <p2>
+                            Zodyak'ın 12 burcunun üçüncüsü olan İkizler burcunun döngüsü ilkbaharın sonlarında başlar, 21 Mayıs - 20 Haziran tarihleri 
+                            arasına denk gelir. 
+                            Yıldız haritanızda İkizler burcu gezegen yerleşimine sahip olmasanız da pek çok gezegen yıl boyunca İkizler burcunun 
+                            rüzgarlı enerjisini harekete geçirerek bu burçtan geçtiği için bu enerjiyi anlamak önemlidir.
+
+                            İkizler burcu insanları hızlı düşüncelerine uygun çabuk hareket ederler. 
+                            Ayni anda birkaç işi birden yapabilirler. 
+                            Onların adapte olamayacakları iş yoktur. 
+                            Bu yüzden değişik karakterli olmaları ile tanınırlar. 
+                            Bu yapılarını her zaman görebilmek mümkündür. 
+                            Son derece neşeli ve mutlu oldukları bir anda, aniden mutsuz olabilirler. 
+                            Çevreleri tarafından sürekli yanlış anlaşılabilirler. 
+                            Herhangi bir konuda bilgileri az bile olsa, bunu çok iyi gizlemeyi başarırlar. 
+                            Aksine; kulaktan dolma duydukları bilgileri öyle ustaca anlatırlar ki, dinleyenler onları o işin uzmanı sanırlar. 
+                            Pratik zekalarıyla, çekici ve akıllıdırlar. 
+                            Bu nedenle onları tanımlayan sözcük 'Düşünüyorum' dur. 
+                            Fakat, bu düşünceleri hep yeni arayışlara doğru yönelmiştir. 
+                            Bu yüzden uzun soluklu çalışmalar onları yorar. 
+                            Kendilerini iyi eğitmiş ikizler hoş ve zariflikleri ile yaşamı zevkli kılarlarken, 
+                            eğitimsiz olanlar da yaşamı o kadar çekilmez hale getirirler. 
+                            Kendi paralarına karşı tutumlu davranmalarına karşın, başkalarının paralarını kolayca harcayabilirler.
+                        </p2>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Hava</span><br>
+                            <strong>Niteliği:</strong> <span>Değişken</span><br>
+                            <strong>Yönetici Gezegeni:</strong> <span>Merkür (iletişim ve haberleşmenin gezegeni)</span><br>
+                            <strong>Rengi:</strong> <span>Turuncu</span><br>
+                            <strong>Taşı:</strong> <span>Safir, zümrüt, inci, yeşim</span><br>
+                            <strong>Günü:</strong> <em>Çarşamba</em><br>
+                            <strong>İkizler Burcu Özellikleri:</strong> 
+                            <span>Esnek, uyumlu, çevik, konuşkan, meraklı, arkadaş canlısı</span>
+                        </p3> 
+                  </div>
+                </div>
+            </section>
+
+            <section id="sectionyengeç" class="sectionyengeç">
+                <div class="burcyengeç">
+                    <div class="Yengeç">
+                        <h3>Yengeç Burcu</h3>
+                        <p>21.06 / 22.07<br>
+                            Yengeçler kendilerini güvence altına almayı ve bağlılığı çok önemserler. 
+                            İçlerindeki çocuk nedeniyle özgür ruhludurlar. 
+                            İlginç kişilikleri sayesinde eğlenceli zaman geçirebileceğiniz insanlardır. 
+                            Hayal güçleri gelişmiştir. 
+                            Ne kadar karmaşık duygulara sahip olurlarsa olsunlar, duygularını ve düşüncelerini kelimelere dökmek konusunda ustadırlar. 
+                        </p>
+                        <p2>
+                            Zodyak'ın 12 burcundan dördüncü burç olan Yengeç burcunun döngüsü her yılın 21 Haziran - 22 Temmuz tarihleri arasında başlar. 
+                            Yıldız haritanızda Yengeç burcu gezegen yerleşimine sahip olmasanız da yıl boyunca çeşitli gezegenler Yengeç burcunu ziyaret 
+                            ederek bu burcun su enerjisini uyandırdığı için bu enerjiyi anlamak önemlidir.
+
+                            Yaşamlarındaki her konuda aşırı bir şekilde hassas, alıngan ve kuruntulu olan Yengeç'leri tanımlayan sözcük 'Hissederim' dir. 
+                            Sorumluluk duyguları çok gelişmiştir. 
+                            Her işte olağanüstü olan ayrıntıcılıkları, işlerinde mükemmeliyetçiliği getirir. 
+                            Ayni sorumlulukları karşılarındakilerden de beklerler. 
+                            Yengeç'ler duygusallıkları ve duyarlılıkları ile tanınırlar. 
+                            Çevresindeki her insandan da ayni hassasiyeti bekledikleri için, kolay geçinilir tipler değildir. 
+                            İyi günlerinde neşeli, iyi kalpli, yardımsever, düşünceli ve anlayışlıdırlar. 
+                            Fakat herhangi belirgin bir neden olmadan somurtkan ve alıngan olabilirler. 
+                            Yakınlarını ve arkadaşlarını çok sevmelerine karşın, bunu pek belli etmezler. 
+                            Kendilerini herhangi bir şekilde inciten kişileri zor bağışlarlar ve yapılan hareketi asla unutmazlar. 
+                            Yengeç'ler müziğe ve dinsel konulara karşı ilgilidirler. 
+                            Sabırlı olan Yengeç'ler tartışmalardan kesinlikle hoşlanmazlar. 
+                            Duygularını sessiz bir şekilde saklarlar.
+                        </p2><br>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Su</span><br>
+                            <strong>Niteliği:</strong> <span>Öncü</span><br>
+                            <strong>Yönetici Gezegeni:</strong> <span>Ay (duyguları ve ruhsal durumları yöneten gök cismi)</span><br>
+                            <strong>Rengi:</strong> <span>Menekşe</span><br>
+                            <strong>Taşı:</strong> <span>Yakut, inci, zümrüt, aytaşı</span><br>
+                            <strong>Günü:</strong> <em>Pazartesi</em><br>
+                            <strong>Yengeç Burcu Özellikleri:</strong> 
+                            <span>Evine, annesine, ailesine, yurduna düşkün, duyarlı, hassas, yemeğe, sofraya meraklı, 
+                                  tarihsel konulara ilgili, müzik yeteneğine sahip</span>
+                        </p3>
+                    
+                    </div>
+                </div>
+            </section>
+
+            <section id="sectionaslan" class="sectionaslan">
+                <div class="burcaslan">
+                    <div class="Aslan">
+                        <h3>Aslan Burcu</h3>
+                        <p>23.07 / 22.08<br>
+                            Aslanlar hayata karşı devamlı pozitif oluşlarıyla ve yaptıkları her işe eğlence katmalarıyla bilinirler. 
+                            Yaşadıkları her duruma olumlu tarafından yaklaştıkları için yaptıkları her işten gurur duyarlar.
+                        </p>
+                        <p2>
+                            Zodyak'ın 12 burcundan beşinci burç olan Aslan burcunun döngüsü her yılın 23 Temmuz - 22 Ağustos tarihleri arasında gerçekleşir. 
+                            Yıldız haritanızda Aslan burcu gezegen yerleşimine sahip olmasanız da 
+                            yıl boyunca çeşitli gezegenler Aslan burcunu ziyaret ederek ateş enerjisini uyandırdığı için bu enerjiyi anlamak önemlidir.
+
+                            Aslan kraldır, önderdir. 
+                            Başkalarının yaşantılarını da onlar adına düzenlemek isterler. 
+                            Her şeye karışırlar, kibirlidirler. 
+                            Bu nedenle onları tanımlayan sözcük 'Yönetirim' dir. 
+                            Yaşam sahnesinde her zaman parlayarak, odak noktası olmak isterler. 
+                            Organizasyon güçleri çok fazladır. 
+                            İsteklerini başkalarına kabul ettirmek, onlar için yaşamlarının 'olmazsa olmaz' şartıdır. 
+                            İyi zamanlarında etkileyici, güler yüzlü, başkalarına yardım etmeyi seven ve bunu kendine görev sayan Aslan'lar 
+                            sevimli ve iyimser kişilerdir. Ona karşı hatalı davransanız bile, size olgun bir şekilde tepki verir. 
+                            Fakat; Sabrı taştıktan sonra, dürüst ve mert, gerektiğinde sert bir şekilde tavır gösterir. 
+                            Zor günlerinde şansları onlara her zaman yardım eder. 
+                            Yönetici gezegenleri Güneş onları en karanlık günlerinde aydınlığa çıkarır. 
+                            Eğitimsiz ve gelişmemiş Aslan tipleri çekilmez olurlar. 
+                            Her konuda sahip olduklarından daha fazlası varmış gibi davranırlar.
+                        </p2><br>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Ateş</span><br>
+                            <strong>Niteliği:</strong> <span>Sabit</span><br>
+                            <strong>Yönetici Gezegeni:</strong> <span>Güneş</span><br>
+                            <strong>Rengi:</strong> <span></span>Sarı<br>
+                            <strong>Taşı:</strong> <span>Yakut, sarı safir, elmas, altın topaz</span><br>
+                            <strong>Günü:</strong> <em>Pazar</em><br>
+                            <strong>Aslan Burcu Özellikleri:</strong> 
+                            <span>Özgüvenli, gururlu, mağrur, koruyan, kollayan, gösterişli, sanata, estetiğe düşkün</span>
+                        </p3>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sectionbaşak" class="sectionbaşak">
+                <div class="burcbaşak">
+                    <div class="Başak">
+                        <h3>Başak Burcu</h3>
+                        <p>23.08 / 22.09<br>
+                            Başaklar, analitik yetenek gerektiren konularda oldukça iyidirler. 
+                            Matematiksel bakış açılarını özel hayatlarından iş yaşamına kadar hayatlarının her alanında kullanırlar. 
+                            Düzenli ve planlı yaşamayı severler ve bunu yaşamlarının her alanında uygularlar. 
+                            Anlama kabiliyetleri ve her şeye yeterli zaman ayırabilme konusundaki üstün başarıları nedeniyle sürekli bir adım önde giderler.
+                        </p>
+                        <p2>
+                            Zodyak'ın 12 burcundan altıncısı olan Başak burcunun döngüsü her yılın 23 Ağustos - 22 Eylül tarihleri arasında gerçekleşir. 
+                            Yıldız haritanızda Başak burcu gezegen yerleşimine sahip olmasanız da yıl boyunca çeşitli gezegenler 
+                            Başak burcunu ziyaret ederek bu burcun toprak enerjisini uyandırdığı için bu enerjiyi anlamak önemlidir.
+            
+                            Yönetici gezegeninizden dolayı hep bilgiyi ararlar. 
+                            Zekalarını kendilerine yardımcı olan bir hizmetçi gibi görürler. 
+                            Bu nedenle Başak burcunu tanımlayan sözcük 'İncelerim ' dir. 
+                            Başak'lar çalışkan ve pratik insanlar olup, yaşamlarındaki en önemli konu İş' tir. 
+                            Güvendikleri kişilere yardım etmeyi sevmelerine rağmen, inanmadıkları ve tembel olduklarını bildikleri kişilere karşı 
+                            soğuk davranırlar. Yaşamları boyunca dinlenmeden çalışırlar. 
+                            Onların dinlenme biçimi bile başkalarına yorucu gelebilir. 
+                            Başak'ların yaşamda ayrıntılar arasında boğulma riskleri hep vardır. 
+                            Böyle anlarda bile, kendi yöntemleri ile yaptıkları işlerde gelişigüzel şeyler bulunabileceğini kabul etmezler. 
+                            Başaklar, genellikle kendilerini hiç kimseye kullandırtmazlar, sınırlarını belirleyerek 'hayır' demesini bilirler. 
+                            Tutumlulukları bazen pintilik derecesindedir. İçli-dışlı olmayı sevmedikleri için, soğuk ve mesafeli bir görünüşleri vardır.
+                        </p2>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Toprak</span><br>
+                            <strong>Niteliği:</strong> <span>Değişken</span><br>
+                            <strong>Yönetici Gezegeni:</strong> <span>Merkür (iletişim gezegeni)</span><br>
+                            <strong>Rengi:</strong> <span>Mavi</span><br>
+                            <strong>Taşı:</strong> <span>Safir, yeşim, mavi topaz, ametist</span><br>
+                            <strong>Günü:</strong> <em>Çarşamba</em><br>
+                            <strong>Başak Burcu Özellikleri:</strong> 
+                            <span>Titiz, çalışkan, mükemmeliyetçi, eleştirel, detaycı, emektar, hizmet odaklı</span>
+                        </p3>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sectionterazi" class="sectionterazi">
+                <div class="burcterazi">
+                    <div class="Terazi">
+                        <h3>Terazi Burcu</h3>
+                        <p>23.09 / 22.10<br>
+                            Teraziler oldukça hassas ve duygusal kişilerdir. 
+                            Diğerlerinin duygusal ihtiyaçlarını iletişim kurmasalar da anlarlar ve buna göre hareket edebilirler. 
+                            Teraziler diplomatik kişilerdir. 
+                            Kişiler arası problemlerde, probleme iki tarafın da duygu ve düşüncelerini dahil ederek değerlendirme yaparlar.
+                        </p>
+                        <p2>
+                            Zodyak'ın 12 burcundan yedincisi olan terazi burcunun döngüsü her yılın 23 Eylül - 22 Ekim tarihleri arasında gerçekleşir. 
+                            Yıldız haritanızda Terazi burcu gezegen yerleşimine sahip olmasanız da yıl boyunca çeşitli gezegenler Terazi burcunu 
+                            ziyaret ederek bu burcun hava enerjisini uyandırdığı için bu enerjiyi anlamak önemlidir.
+            
+                            Kararsızlıkları ile ünlü cazibe sembolü karşınızda duruyor. 
+                            Nedenini bilmediğiniz bir çekim gücü etkisi altına girdiğinizi fark ettiğinizde iş işten çoktan geçmiş olacaktır. 
+                            Onların büyülü bir havası vardır. 
+                            Ritmik hareketleri ile dans eder gibi bir yaşam sürer. 
+                            Onun yanında kızgınlıklarınız yok olur. 
+                            En sinirli anınızda bile sizi regüle etme yeteneğine sahiptir. Üstelik, tartışmayı sevmesine rağmen; 
+                            bu kadar ustalıkla konulara hakim olup, sonrada sesini hiç yükseltmeden zaferini ilen eden çok az kişi vardır. 
+                            Bir Terazi bunu başarır. Sizin kılıç salladığınız ortamlarda, 
+                            o; gülücüklerini, zarafetini ve öpücüklerini gönderecektir. 
+                            Kafasında müthiş bir denge vardır. Onun ne düşündüğünü bilemezsiniz. 
+                            Uyumlu ve sevecen yapısının altında gizli bir güç vardır. 
+                            Bulunduğu ortamları çok çabuk inceler ve gizli detayların nerede saklı olduğunu bulmaya çalışır. 
+                            Konuya hakim olmak için deliler gibi çalışmak ve kendini harap etmek yerine, keskin görüşlerini ve 
+                            doğru mantığını kullanacağı ortamları seçer. 
+                            Başarılı olmak için imkansızlığı değil, kendini yüceltecek elle tutulur konular üzerinde uyumlu bir sessizlikle çalışır. 
+                            Yaptığı işlerin doğruluğuna inandığı halde, onay beklemekten de kendini alamaz. Onu tenkit etme gibi bir şansınız asla olamaz. 
+                            Böyle bir şeye kalkıştığınız taktirde; size tüm zarafetiyle gülümseyecek, önerilerinizi can kulağıyla dinleyecek ve 
+                            sonunda kibarca teşekkür ederek sizden uzaklaşacaktır. 
+                            Fakat bir daha asla sizin fikrinizi sormayacaktır. 
+                            Gülümseyen çehresinin altında müthiş bir ego gizlidir, aşk ve sanat onun yaşam öğeleridir. 
+                            Dünyada her şeyden vazgeçebilir, fakat kişiliğini besleyen ve duygusallığını yansıtan soyut kavramlarından vazgeçemez. 
+                            Akıl, mantık, aşk işte karşınızda her şeyiyle özel bir kişi duruyor. 
+                            Onun terazilerinin kefesinde yer almak istiyorsanız, belli standart ölçülerin çok üstünde olmanız gerekir. 
+                            Kolay bir insan olmadığını şimdiden hatırlatırız.
+                        </p2>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Hava</span><br>
+                            <strong>Niteliği:</strong> <span>Öncü</span><br>
+                            <strong>Yönetici Gezegeni:</strong> <span>Venüs (güzelliğin, lüksün ve aşkın gezegeni)</span><br>
+                            <strong>Rengi:</strong> <span>Petrol Yeşili</span><br>
+                            <strong>Taşı:</strong> <span>Safir, inci, mercan, aytaşı</span><br>
+                            <strong>Günü:</strong> <em>Cuma</em><br>
+                            <strong>Terazi Burcu Özellikleri:</strong> 
+                            <span>Adil, eşitlikçi, dengeli, uyumlu, sakin, sabırlı, akıllı, kibar</span>
+                        </p3>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sectionakrep" class="sectionakrep">
+                <div class="burcakrep">
+                    <div class="Akrep">
+                        <h3>Akrep Burcu</h3>
+                        <p>24.10 / 23.11<br>
+                            Akreplerin en belirgin özellikleri sezgisel duygusallıklarıdır. 
+                            İnsan zihnini çok iyi anlayabilir ve ön sezileriyle çevrelerindeki insanların adımlarını önceden tahmin edebilirler. 
+                            Akrepler hırslıdırlar. Kafalarına koydukları şey her neyse, ona ulaşabilmek için ellerinden gelen her şeyi yaparlar.
+                        </p>
+                        <p2>
+                            Zodyak'ın 12 burcundan sekizincisi olan Akrep burcunun döngüsü her yılın 24 ekim - 23 kasım tarihleri arasında gerçekleşir. 
+                            Yıldız haritanızda Akrep burcu gezegen yerleşimine sahip olmasanız da yıl boyunca çeşitli gezegenler Akrep burcunu ziyaret 
+                            ederek bu burcun su enerjisini uyandırdığı için bu enerjiyi anlamak önemlidir.
+            
+                            Akrepler kadar yaşamda tutkuyla yaşayan az insan vardır. 
+                            Bu nedenle onları simgeleyen sözcük 'Arzuluyorum' dur. 
+                            Hiçbir şeyi yarım bırakmazlar. 
+                            Akreplerin güçleri gözlerinden okunur. 
+                            Mimiklerini kontrol altında tutsalar bile, bakışları ile sevgilerini ya da nefretlerini aktarabilirler. 
+                            Duygularına kapılırlarsa, tehlikeli olabilirler. 
+                            Akrep'ler ukala ve kendini beğenmiş insanları sevmezler, onları aşağılayarak hadlerini bildirirler. 
+                            Kendi bildiklerini okuyarak, uzlaşmaya yanaşmazlar. 
+                            Aşırı bir şekilde kuşkuculardır, kolay inanmazlar ama inandıkları bir konuyu da sonuna kadar inatla savunurlar. 
+                            Çalışmalarında sabır ve özenle çalışırlarken, gösterişten uzak bir şekilde işlerini yaparlar. Kendilerini yetiştirmemiş Akrep'ler, yaşamın basitliklerine yatkınlıkları ile kendi kendilerinin yok oluşlarına neden olurlar. Cinsellik yaşamlarında önemli bir yer tutar. Ölümü yeni bir başlangıç olarak kabul ettiklerinden, ölümden korkmazlar.
+                        </p2><br>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Su</span><br>
+                            <strong>Niteliği:</strong> <span>Sabit</span><br>
+                            <strong>Yönetici Gezegeni:</strong> <span>Plüton (gücün ve yenilenmenin gezegeni)</span><br>
+                            <strong>Rengi:</strong> <span></span>Kırmızı<br>
+                            <strong>Taşı:</strong> <span>Yakut, topaz, opal, aquamarin</span><br>
+                            <strong>Günü:</strong> <em>Salı</em><br>
+                            <strong>Akrep Burcu Özellikleri:</strong> 
+                            <span>Mücadeleci, güçlü, yılmaz, hırslı kişilerdir. 
+                                Pes ettiğini düşündüğünüz anda küllerinden yeniden doğabilir. 
+                                Güvenilir, kaliteli insanlardır.</span>
+                        </p3>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sectionyay" class="sectionyay">
+                <div class="burcyay">
+                    <div class="Yay">
+                        <h3>Yay Burcu</h3>
+                        <p>22.11 / 21.12<br>
+                            Yay burçlarının en belirgin özelliği, hayata karşı fazlasıyla pozitif bir bakış açısı geliştirmiş olmalarıdır. 
+                            Değişim, hayatlarının olmazsa olmazıdır. 
+                            Her durumda ve koşulda farklılık ararlar. 
+                            Yaylar ahlaki değerlere çok önem verirler ve bu değerleri kendi yaşamlarında uygulamaya çalışırlar. 
+                            Prensiplerinden asla ödün vermezler. 
+                            Güvenilir ve açık fikirlidirler. Bu nedenle iletişim kurmakta hiç zorluk çekmezler. 
+                            Bir çok farklı konuda yetenekli olabilirler, bu nedenle de farklı işlerde başarı elde edebilirler.
+                        </p>
+                        <p2>
+                            Zodyak'ın 12 burcundan dokuzuncusu olan Yay burcunun döngüsü her yılın 22 Kasım - 21 Aralık tarihleri arasında gerçekleşir. 
+                            Yıldız haritanızda Yay burcu gezegen yerleşimine sahip olmasanız da yıl boyunca çeşitli gezegenler Yay burcunu ziyaret ederek 
+                            bu burcun ateş enerjisini uyandırdığı için bu enerjiyi anlamak önemlidir.
+            
+                            Kavrama yetenekleri gelişmiş olduğundan becerikliliklerinin de katkısı ile ele aldıkları her işte, 
+                            özellikle ciddi işlerde ve felsefe konularında başarılı olurlar. 
+                            Bu nedenle Yay Burcunu tanımlayan sözcük 'Görüyorum' dur. 
+                            Yay burcu insanları içtenlikleri ve iyimser yaşam görüşleri ile tanınırlar. 
+                            Gençliklerinde dikkatsiz, heyecanlı ve geleneklere aykırı davranışlar içinde olsalar da, 
+                            geçmiş yanılgılarından en çok ders alan kişiler bu burçtan çıkar. 
+                            Özgürlüklerine aşırı düşkün, patavatsızlık derecesinde pratik insanlardır. 
+                            Yay'ların yaşam çerçeveleri herhangi bir şekilde kısıtlandığı zaman, içsel bir biçimde alt üst olurlar. 
+                            Akılsızca risklere atılırlar. 
+                            Yayların hayatı yeniliklere olan merakları ile karakterize edilebilir. 
+                            Bilmedikleri şeyleri araştırıp, keşfetmeyi severler. 
+                            Yaylar çok yönlü ve ayni anda ilgilenebilecekleri birkaç konu olduğunda mutlu olan kişilerdir. 
+                            Kendilerini yorgun hissediyorlarsa, o konudan sıkılmış demektir.
+                        </p2><br>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Ateş</span><br>
+                            <strong>Niteliği:</strong> <span>Değişken</span><br>
+                            <strong>Yönetici Gezegeni:</strong> <span>Jüpiter (şans ve ilerlemenin gezegeni)</span><br>
+                            <strong>Rengi:</strong> <span>Mor</span><br>
+                            <strong>Taşı:</strong> <span>Yakut, topaz, garnet, ametist</span><br>
+                            <strong>Günü:</strong> <em>Perşembe</em><br>
+                            <strong>Yay Burcu Özellikleri:</strong> 
+                            <span>Bağımsız, özgür, hareketli, dinamik, sportif, keşif ve macera ruhuna sahip</span>
+                        </p3>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sectionoğlak" class="sectionoğlak">
+                <div class="burcoğlak">
+                    <div class="Oğlak">
+                        <h3>Oğlak Burcu</h3>
+                        <p>22.11 / 19.01<br>
+                            Hedef odaklılık deyince akla Oğlaklar gelir. 
+                            Söz konusu hedefledikleri şeye ulaşmak olduğunda gözleri başka hiçbir şey görmez. 
+                            Yaşamlarının her alanında analitik ve hedef odaklıdırlar. 
+                            Yavaş ve sağlam adımlarla ilerlemeyi severler. 
+                            Özeleştiri yapmaktan çekinmezler ancak başkalarını eleştirirken oldukça dikkatli davranırlar. 
+                            Planlı oluşları ve sebep-sonuç ilişkisi kurmadaki yetenekleri nedeniyle yönetici sıfatını iyi taşırlar.
+                        </p>
+                        <p2>
+                            Zodyak'ın 12 burcundan onuncusu olan Oğlak burcunun döngüsü her yılın 22 Aralık - 19 Ocak tarihleri arasında gerçekleşir. 
+                            Yıldız haritanızda Oğlak burcu gezegen yerleşimine sahip olmasanız da yıl boyunca çeşitli gezegenler 
+                            Oğlak burcunu ziyaret ederek bu burcun toprak enerjisini uyandırdığı için bu enerjiyi anlamak önemlidir.
+                            
+                            Geleceği ayrıntılı biçimde planlamaya çalışan Oğlak'lar bu özellikleri nedeniyle sık sık kuruntulara kapılarak, depresyona girerler. 
+                            İşleri ile aşırı meşgul olduklarından, insanlarla zor ilişki kurarlar. 
+                            Fakat, hiçbir zaman kendilerini yalnız hissetmezler. 
+                            Bu nedenle onları tanımlayan sözcük 'Kullanırım' dır. 
+                            Oğlaklar ciddilikleri, tutuculukları ve güçlü iradeleri ile tanımlanırlar. 
+                            Çalışkanlıkları ile kolaylıkla başkalarının saygısını kazanırlar. 
+                            Gerçek bir Oğlak'ın iki temel özelliği vardır. 
+                            Güvenilirlik ve dürüstlük. Çok gelişmiş bir görev duyguları vardır. 
+                            Bazen başkalarının başarısızlıklarını abartırlar. 
+                            Oğlaklar arkadaşları ile ilgili çok iyi sırdaş olurlar, para konusunda dikkatli olmalarına rağmen, eli açık insanlardır. 
+                            Geleneklere bağlı kişiler olduklarından, duygusal özgürlüğü anlamakta güçlük çekerler. 
+                            Bu nedenle kendilerinden yaşça küçük kişilerle bazen sürtüşmeleri olur. 
+                            Sürekli somut konularla uğraşmayı severler, doğada bulunan olaylardan örneklemelerle işlerini başarılı bir şekilde yürütürler. 
+                            Bu yüzden ruhsal olarak da doyumlu kişilerdir. 
+                            Olayları organize ederlerken rahatlıklarını gözetirler ve kendilerinin zevklerine uygun olmasına önem verirler. 
+                            Bu özellikleri evlerine de yansır.
+                        </p2><br>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Toprak</span><br>
+                            <strong>Niteliği:</strong> <span>Kardinal (öncü)</span><br>
+                            <strong>Yönetici Gezegeni:</strong> <span>Satürn (disiplinin ve olgunluğun gezegeni)</span><br>
+                            <strong>Rengi:</strong> <span>Kahverengi</span><br>
+                            <strong>Taşı:</strong> <span>Ametist</span><br>
+                            <strong>Günü:</strong> <em>Cumartesi</em><br>
+                            <strong>Oğlak Burcu Özellikleri:</strong> <span>Ciddi, soğukkanlı, gereğinde mesafeli, planlı, organize, disiplinli, iş ve kariyer odaklı</span>
+                        </p3>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sectionkova" class="sectionkova">
+                <div class="burckova">
+                    <div class="Kova">
+                        <h3>Kova Burcu</h3>
+                        <p>21.01 / 18.02<br>
+                            Kovaların en belirgin özellikleri güçlü iletişim yetenekleridir. 
+                            Aşırı sosyaldirler ve çevrelerindeki insanları kendilerine çekerler. 
+                            Arkadaşlarına ve ailelerine bağlıdırlar. Oldukça yaratıcı ve eğlenceli kişilerdir. 
+                            Arkadaşları arasında popülerdirler.
+                        </p>
+                        <p2>
+                            Zodyak'ın 126 burcundan on birincisi olan Kova burcunun döngüsü her yılın 21 Ocak - 18 Şubat tarihleri arasında gerçekleşir. 
+                            Yıldız haritanızda Kova burcu gezegen yerleşimine sahip olmasanız da yıl boyunca çeşitli gezegenler Kova burcunu ziyaret ederek 
+                            bu burcun hava enerjisini uyandırdığı için bu enerjiyi anlamak önemlidir.
+                
+                            Hayal güçleri sınırsız olmakla birlikte, düşünceleri bulundukları anın ötesinde, akılcı ve sezgiseldir. 
+                            Kova 'lar dik kafalıdırlar. Kendilerini dinleyenlerin ne demek istediklerini anlamadıklarını sanırlar. 
+                            Kovaları tanımlayan sözcük 'Biliyorum' dur. Kova burcu insanları sevecen tavırları ile tanınırlar. 
+                            Bu kişiler bencil değildirler. 
+                            Irk, cinsiyet ve sosyal durumuna bakmaksızın, herkesin ayni olanaklara sahip olmasını isterler. 
+                            Modern görünüşlerine karşın, inatçı ve sabit fikirli olurlar. 
+                            Onlara yaklaşmak çok zordur, çünkü ne kadar dostça davranırlarsa davransınlar, arada her zaman bir mesafe bırakırlar.
+                            Kişisel özgürlükleri onlar için o denli önemlidir ki, bu yüzden en yakın ilişkilerini kesip atabileceği gibi, yine özgürlükleri 
+                            adına her türlü özveride bulunurlar. 
+                            Bu yüzden Kovalara aile yaşamı biraz zor gelir. 
+                            Çoğu zaman yeni bir şeyler keşfetmek için uğraşıda bulunurlar. 
+                            Belli ilkeleri sonuna dek savunmaları onları hiç rahatsız etmez.
+                        </p2>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Hava</span><br>
+                            <strong>Niteliği:</strong> <span>Sabit</span><br>
+                            <strong>Yönetici Gezegeni:</strong> <span>Uranüs</span><br>
+                            <strong>Rengi:</strong> <span>Metalik Mavi</span><br>
+                            <strong>Taşı:</strong> <span>Aquamarin, garnet, ametist, zircon</span><br>
+                            <strong>Günü:</strong> <em>Cumartesi</em><br>
+                            <strong>Kova Burcu Özellikleri:</strong> 
+                            <span>Arkadaş ve dost canlısı, sosyal, yenilikçi, sıradışı, marjinal</span>
+                        </p3>
+                </div>
+                </div>
+            </section>
+
+            <section id="sectionbalık" class="sectionbalık">
+                <div class="burcbalık">
+                    <div class="Balık">
+                        <h3>Balık Burcu</h3>
+                        <p>19.02 / 20.03<br>
+                            Balıklar genelde utangaç olmalarıyla bilinirler ve sosyal ortamlarda ilginç davranışlar sergileyebilirler. 
+                            Sizi tanımaya başladıklarında, çevrenizdeki anlaşılması en kolay ve sevilen insan haline gelirler. 
+                            Romantik olmalarıyla bilinirler ve, romantizmi herkes tarafından bilinen, geleneksel kalıplar çerçevesinde yaşamayı severler. 
+                            Kibar, nazik ve ilgilidirler, bu nedenle sevildiklerini hissettiklerinde korumacı ve sevgi dolu davranırlar.
+                        </p>
+                        <p2>
+                            Zodyak'ın 12 burcundan on ikincisi olan Balık burcunun döngüsü her yılın 19 Şubat - 20 Mart tarihleri arasında gerçekleşir. 
+                            Yıldız haritanızda Balık burcu gezegen yerleşimine sahip olmasanız da yıl boyunca çeşitli gezegenler Balık burcunu ziyaret ederek 
+                            bu burcun su enerjisini uyandırdığı için bu enerjiyi anlamak önemlidir.
+            
+                            Sabır, eli açıklık ve duyarlılık bu burçta doğan kişilerin en önemli nitelikleridir. 
+                            Büyük bir inandırma yetenekleri vardır. Dürüst, vicdan sahibi, sadık ve uysaldırlar. Her çevreye kolayca uyabilirler. 
+                            Genellikle hayal dünyasında yaşarlar.
+                            
+                            Yaşam görüşleri ciddi fakat gerçekçi değildirler. 
+                            Balık burcu, diğer burçlar arasında dış etkenlerden en çok etkilenen kişilerdir. 
+                            Düş dünyasında, öylesine mutludur ki, bazen onun aptal olduğunu bile düşünebilirsiniz. 
+                            Ama, zannettiğinizden daha akıllı ve kurnazdır. 
+                            Sinirli yapısını gizli bir sakinlikle örterken, herkesin seçtiği özel bir kişi olmanın hayallerini kurarlar. 
+                            Yaşam onun için ürkütücü ve korkunçtur.
+                            Balık burcu insanını dışarıdan gözlemleyenler; duygusal yapısının bir aşk acısına dayanamayacağını zannederler ve 
+                            kötü haberi hemen vermek istemezler. 
+                            Aslında, kırılgan görüntüsünün altında güçlü bir kişilik yatar. 
+                            Göz yaşlarını kısa sürede kurutur ve mendillerini bir kenara atarak, yeni bir yaşamın içinde kendini bulur. 
+                            Onları teselli edecek o kadar kişi bulunur ki; yeni bir aşk acısı kapısını çalıncaya kadar, hayatını istediği gibi yaşar. 
+                            Duygusal kırıklıklar pes etmelerine yetmez ve bir sürü yarım kalmış aşkıyla birlikte 
+                            bir dolu anlatılacak anılarıyla yaşamını tamamlar.
+                        </p2>
+                        <p3>
+                            <strong>Elementi:</strong> <span>Su</span><br>
+                            <strong>Niteliği:</strong> <span>Değişken</span><br>
+                            <strong>Yönetici Gezegeni:</strong> <span>Neptün (hayal gücünün gezegeni), Jüpiter (şans ve ilerlemenin gezegeni)</span><br>
+                            <strong>Rengi:</strong> <span>Koyu Gri</span><br>
+                            <strong>Taşı:</strong> <span>Opal, topaz, aquamarin, diaspor</span><br>
+                            <strong>Günü:</strong> <em>Perşembe</em><br>
+                            <strong>Balık Burcu Özellikleri:</strong> 
+                            <span>Hassas, duyarlı, empatik, vicdanlı, duyarlı, sanatsal, hayırsever, yardımsever, kolay etkilenen</span>
+                        </p3>
+                </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Yükselen Burçlar Bilgi Merkezi</p>
+        </footer>
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate asynchronous loading to demonstrate streaming rendering
+        await Task.Delay(500);
+
+        var startDate = DateOnly.FromDateTime(DateTime.Now);
+        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        {
+            Date = startDate.AddDays(index),
+            TemperatureC = Random.Shared.Next(-20, 55),
+            Summary = summaries[Random.Shared.Next(summaries.Length)]
+        }).ToArray();
+    }
+
+    private class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+        public int TemperatureC { get; set; }
+        public string? Summary { get; set; }
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}

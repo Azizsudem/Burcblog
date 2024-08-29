@@ -1,0 +1,177 @@
+﻿@page "/yorumlar"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burç Yorum Sayfası</title>
+    <link rel="stylesheet" href="ogretmen.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .share-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+            .share-box input[type="text"],
+            .share-box textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            .share-box button {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+        #feed {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .post {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+            .post h3 {
+                margin: 0 0 10px 0;
+                font-size: 18px;
+            }
+
+            .post p {
+                margin: 0 0 10px 0;
+            }
+
+            .post img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+        .delete {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Günlük Burç Yorumu</h2>
+        <div class="share-box">
+            <h3>KOÇ</h3>
+            <textarea id="text" placeholder="Paylaşımınızı buraya yazınız..."></textarea>
+            <button id="shareButton">Paylaş</button>
+        </div>
+        <div id="feed">
+            <!-- Paylaşımlar buraya eklenecek -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+                const shareButton = document.getElementById('shareButton');
+                const feed = document.getElementById('feed');
+
+                shareButton.addEventListener('click', function() {
+                    const teacherName = document.getElementById('teacherName').value.trim();
+                    const content = document.getElementById('content').value.trim();
+                    const imageInput = document.getElementById('image');
+                    let imageUrl = '';
+
+                    if (teacherName === '' || content === '') {
+                        alert('Lütfen adınızı, paylaşım içeriğini ve bir fotoğraf seçin.');
+                        return;
+                    }
+
+                    if (imageInput.files && imageInput.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            imageUrl = e.target.result;
+                            createPost(teacherName, content, imageUrl);
+                        };
+                        reader.readAsDataURL(imageInput.files[0]);
+                    } else {
+                        createPost(teacherName, content);
+                    }
+                });
+
+                function createPost(teacherName, content, imageUrl) {
+                    const postElement = document.createElement('div');
+                    postElement.className = 'post';
+
+                    const teacherNameElement = document.createElement('h3');
+                    teacherNameElement.textContent = teacherName;
+
+                    const contentElement = document.createElement('p');
+                    contentElement.textContent = content;
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Sil';
+                    deleteButton.className = 'delete';
+                    deleteButton.addEventListener('click', function() {
+                        feed.removeChild(postElement);
+                    });
+
+                    postElement.appendChild(teacherNameElement);
+                    postElement.appendChild(contentElement);
+                    postElement.appendChild(deleteButton);
+
+                    if (imageUrl) {
+                        const imageElement = document.createElement('img');
+                        imageElement.src = imageUrl;
+                        postElement.appendChild(imageElement);
+                    }
+
+                    feed.appendChild(postElement);
+
+                    // Clear the inputs after sharing
+                    document.getElementById('text').value = '';
+                    document.getElementById('content').value = '';
+                }
+            });
+    </script>
+</body>
+</html>
+
+
+@code {
+
+}

@@ -1,0 +1,284 @@
+﻿@page "/login"
+@using Microsoft.AspNetCore.Components
+@inject NavigationManager Navigation
+
+<style>/* Genel Sayfa Stili */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f9f9f9, #e0e0e0);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Başlık Stili */
+h3 {
+    color: #333;
+    border-bottom: 2px solid #ffa07a;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Uyarı Mesajları */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+/* Form Stili */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+input[type="date"] {
+    width: calc(100% - 2px);
+}
+
+/* Buton Stili */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Seçici Stili */
+input[type="select"] {
+    width: 100%;
+}
+
+/* Mobil Duyarlılık */
+@@ media (max-width: 768px) {
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+</style>
+
+<h3>Kullanıcı Girişi</h3>
+
+@if (loginMessage != null)
+{
+    <div class="alert alert-warning">
+        @loginMessage
+    </div>
+}
+
+<EditForm Model="@loginModel" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="username">Kullanıcı Adı:</label>
+        <InputText id="username" class="form-control" @bind-Value="loginModel.Username" />
+        <ValidationMessage For="@(() => loginModel.Username)" />
+    </div>
+
+    <div class="form-group">
+        <label for="password">Şifre:</label>
+        <InputText id="password" type="password" class="form-control" @bind-Value="loginModel.Password" />
+        <ValidationMessage For="@(() => loginModel.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+</EditForm>
+
+@code {
+    private LoginModel loginModel = new LoginModel();
+    private string loginMessage;
+
+    private void HandleLogin()
+    {
+        // Burada giriş işlemi yapılabilir.
+        // Örnek: Yönetici mi kullanıcı mı kontrol edilebilir.
+        // Bu örnekte sadece mesaj gösterilmektedir.
+        loginMessage = "Giriş başarılı!";
+    }
+
+    public class LoginModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+}
+
+<h3>Yönetici Girişi</h3>
+
+@if (adminLoginMessage != null)
+{
+    <div class="alert alert-warning">
+        @adminLoginMessage
+    </div>
+}
+
+<EditForm Model="@adminLoginModel" OnValidSubmit="HandleAdminLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="adminUsername">Kullanıcı Adı:</label>
+        <InputText id="adminUsername" class="form-control" @bind-Value="adminLoginModel.Username" />
+        <ValidationMessage For="@(() => adminLoginModel.Username)" />
+    </div>
+
+    <div class="form-group">
+        <label for="adminPassword">Şifre:</label>
+        <InputText id="adminPassword" type="password" class="form-control" @bind-Value="adminLoginModel.Password" />
+        <ValidationMessage For="@(() => adminLoginModel.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+</EditForm>
+
+@code {
+    private AdminLoginModel adminLoginModel = new AdminLoginModel();
+    private string adminLoginMessage;
+
+    private void HandleAdminLogin()
+    {
+        // Burada yönetici giriş işlemi yapılabilir.
+        // Örnek: Yönetici yetkileri kontrol edilebilir.
+        // Bu örnekte sadece mesaj gösterilmektedir.
+        adminLoginMessage = "Yönetici girişi başarılı!";
+    }
+
+    public class AdminLoginModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+}
+
+<h3>Kullanıcı Kaydı</h3>
+
+@if (registerMessage != null)
+{
+    <div class="alert alert-warning">
+        @registerMessage
+    </div>
+}
+
+<EditForm Model="@registerModel" OnValidSubmit="HandleRegister">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="firstName">Ad:</label>
+        <InputText id="firstName" class="form-control" @bind-Value="registerModel.FirstName" />
+        <ValidationMessage For="@(() => registerModel.FirstName)" />
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Soyad:</label>
+        <InputText id="lastName" class="form-control" @bind-Value="registerModel.LastName" />
+        <ValidationMessage For="@(() => registerModel.LastName)" />
+    </div>
+
+    <div class="form-group">
+        <label for="birthDate">Doğum Tarihi:</label>
+        <InputDate id="birthDate" class="form-control" @bind-Value="registerModel.BirthDate" />
+        <ValidationMessage For="@(() => registerModel.BirthDate)" />
+    </div>
+
+    <div class="form-group">
+        <label for="gender">Cinsiyet:</label>
+        <InputSelect id="gender" class="form-control" @bind-Value="registerModel.Gender">
+            <option value="">Seçiniz</option>
+            <option value="Erkek">Erkek</option>
+            <option value="Kadın">Kadın</option>
+        </InputSelect>
+        <ValidationMessage For="@(() => registerModel.Gender)" />
+    </div>
+
+    <div class="form-group">
+        <label for="username">Kullanıcı Adı:</label>
+        <InputText id="username" class="form-control" @bind-Value="registerModel.Username" />
+        <ValidationMessage For="@(() => registerModel.Username)" />
+    </div>
+
+    <div class="form-group">
+        <label for="password">Şifre:</label>
+        <InputText id="password" type="password" class="form-control" @bind-Value="registerModel.Password" />
+        <ValidationMessage For="@(() => registerModel.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydol</button>
+</EditForm>
+
+@code {
+    private RegisterModel registerModel = new RegisterModel();
+    private string registerMessage;
+
+    private void HandleRegister()
+    {
+        // Burada kayıt işlemi yapılabilir.
+        registerMessage = "Kayıt başarılı!";
+    }
+
+    public class RegisterModel
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string Gender { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+}

@@ -1,0 +1,97 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Burçland.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Burçland.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\akrep.png",
+      "PackagePath": "staticwebassets\\images\\akrep.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\aslan.png",
+      "PackagePath": "staticwebassets\\images\\aslan.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\balık.png",
+      "PackagePath": "staticwebassets\\images\\balık.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\başak.png",
+      "PackagePath": "staticwebassets\\images\\başak.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\boğa.png",
+      "PackagePath": "staticwebassets\\images\\boğa.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\ikizler.png",
+      "PackagePath": "staticwebassets\\images\\ikizler.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\kova.png",
+      "PackagePath": "staticwebassets\\images\\kova.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\koç.png",
+      "PackagePath": "staticwebassets\\images\\koç.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\oğlak.png",
+      "PackagePath": "staticwebassets\\images\\oğlak.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\terazi.png",
+      "PackagePath": "staticwebassets\\images\\terazi.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\yay.png",
+      "PackagePath": "staticwebassets\\images\\yay.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\yengeç.png",
+      "PackagePath": "staticwebassets\\images\\yengeç.png"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\images\\zodiyak.video.mp4",
+      "PackagePath": "staticwebassets\\images\\zodiyak.video.mp4"
+    },
+    {
+      "Id": "C:\\Users\\azizs\\OneDrive\\Masaüstü\\Burçland\\wwwroot\\videos\\video.mp4",
+      "PackagePath": "staticwebassets\\videos\\video.mp4"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Burçland.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Burçland.props",
+      "PackagePath": "build\\Burçland.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Burçland.props",
+      "PackagePath": "buildMultiTargeting\\Burçland.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Burçland.props",
+      "PackagePath": "buildTransitive\\Burçland.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
